@@ -1,0 +1,27 @@
+@use '../utilities/variables' as *;
+@use '../utilities/mixins' as *;
+
+.hamburger{
+    max-height: 2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 2em;
+    
+    &:after{
+        content: "section";
+    }
+
+    @include mq($tabletPortrait){
+        &:after{
+            content: "more";
+        }
+    }
+    
+}
+
+//$desktopMedium: em(1251);
+// $tabletLandscape: em(1024);
+// $tabletPortrait: em(850);
+// $phoneLandscape: em(670);
+// $phonePortrait: em(420);

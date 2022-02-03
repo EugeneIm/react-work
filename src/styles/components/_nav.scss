@@ -1,0 +1,63 @@
+@use '../utilities/variables' as *;
+@use '../utilities/mixins' as *;
+
+
+nav 
+{
+	ul
+	{
+		@include flatten(true);
+		display: inline-flex;
+		flex-wrap: wrap;
+	}
+
+	li
+	{
+		display:flex;
+
+		list-style: none;
+		justify-content:flex-end;
+		padding: 0.2em;
+	}
+
+	.first-list
+	{
+
+		@include mq($phonePortrait)
+		{
+			display:none;
+		}
+
+	}
+
+	.second-list
+	{
+		@include mq($phonePortrait)
+		{
+			display:none;
+		}
+
+		@include mq($phoneLandscape)
+		{
+			display:none;
+		}
+
+		@include mq($tabletPortrait)
+		{
+			display:flex;
+			justify-self: space-between;
+		}
+	}
+}
+
+.navigation
+{
+	display:flex;
+	justify-self: flex-end;
+}
+
+// $desktopMedium: em(1251);
+// $tabletLandscape: em(1024);
+// $tabletPortrait: em(850);
+// $phoneLandscape: em(670);
+// $phonePortrait: em(420);

@@ -1,0 +1,37 @@
+@use '../utilities/variables' as *;
+@use '../utilities/mixins' as *;
+
+.news-page{
+	display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: 1.25em;
+    max-width:900px;
+    margin-left: auto;
+    margin-right: auto;
+	}
+
+img{
+	max-width:100%;
+	height:auto;
+	border:2rem;
+}
+
+.news{
+	margin:em(10);
+
+	img{
+		width: 100%;
+		object-fit: cover;
+
+		@include mq($tabletPortrait){
+			height: 160px;
+
+		}
+	}
+}
+
+//$desktopMedium: em(1251);
+// $tabletLandscape: em(1024);
+// $tabletPortrait: em(850);
+// $phoneLandscape: em(670);
+// $phonePortrait: em(420);
