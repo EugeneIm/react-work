@@ -1,14 +1,27 @@
 @use '../utilities/variables' as *;
 @use '../utilities/mixins' as *;
 
-.news-page{
+.news-page
+{
 	display: grid;
     grid-template-columns: repeat(3, 1fr);
     margin-top: 1.25em;
     max-width:900px;
     margin-left: auto;
     margin-right: auto;
-	}
+
+    @include mq($phoneLandscape)
+    {
+    	display:grid;
+    	grid-template-columns:repeat(2, 1fr);
+
+    	@include mq($tabletPortrait)
+    	{
+	    	display:grid;
+	    	grid-template-columns:repeat(3, 1fr);
+    	}
+    }
+}
 
 img{
 	max-width:100%;
@@ -23,9 +36,9 @@ img{
 		width: 100%;
 		object-fit: cover;
 
-		@include mq($tabletPortrait){
+		@include mq($tabletPortrait)
+		{
 			height: 160px;
-
 		}
 	}
 }

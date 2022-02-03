@@ -30,5 +30,5 @@ function Hamburger(props) {
       )
   }
   
-  
+
   export default Hamburger;
